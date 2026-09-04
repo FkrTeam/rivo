@@ -1,0 +1,11 @@
+# Line endings: LF in the repository and in working copies on every platform.
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.woff2 binary
+*.glb binary
+*.pdf binary
