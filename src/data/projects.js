@@ -18,6 +18,27 @@
  */
 export const projects = [
   {
+    slug: 'fiat-house',
+    title: 'Fiat House',
+    location: '',
+    sector: 'Residential',
+    scope: 'Amenity lounge, kitchens, bedroom built-ins',
+    summary:
+      'Amenity lounge and unit interiors at Fiat House. A full-height shelving wall anchors the double-height lounge, and the units carry walnut-toned kitchens with white counters and bedroom built-ins in the same finish.',
+    featured: true,
+    cover: 'fiat-house-02',
+    focus: '60% 50%',
+    gallery: [
+      { name: 'fiat-house-02', alt: 'Double-height lounge with a shelving wall' },
+      { name: 'fiat-house-01', alt: 'Entrance lobby with a green wall' },
+      { name: 'fiat-house-03', alt: 'Unit kitchen with island' },
+      { name: 'fiat-house-04', alt: 'Unit kitchen, L-shaped' },
+      { name: 'fiat-house-05', alt: 'Kitchen detail, integrated appliances' },
+      { name: 'fiat-house-06', alt: 'Bedroom with built-ins and kitchen beyond' },
+      { name: 'fiat-house-07', alt: 'Building exterior' },
+    ],
+  },
+  {
     slug: '1404-willow-hoboken',
     title: '1404 Willow',
     location: 'Hoboken',
@@ -47,7 +68,7 @@ export const projects = [
     scope: 'Unit kitchens',
     summary:
       'Unit kitchens for a mixed-use building on Washington Street, Hoboken. Flat white fronts run the length of each kitchen, and a warm oak tall run frames the refrigerator and turns the corner into the island.',
-    featured: true,
+    featured: false,
     cover: '301-washington-hoboken-04',
     focus: '50% 45%',
     gallery: [
@@ -117,27 +138,6 @@ export const projects = [
       { name: 'hudson-cliff-07', alt: 'Wardrobe and entry console' },
       { name: 'hudson-cliff-08', alt: 'Elevator hall in oak and stone' },
       { name: 'hudson-cliff-01', alt: 'Building exterior at dusk' },
-    ],
-  },
-  {
-    slug: 'fiat-house',
-    title: 'Fiat House',
-    location: '',
-    sector: 'Residential',
-    scope: 'Amenity lounge, kitchens, bedroom built-ins',
-    summary:
-      'Amenity lounge and unit interiors at Fiat House. A full-height shelving wall anchors the double-height lounge, and the units carry walnut-toned kitchens with white counters and bedroom built-ins in the same finish.',
-    featured: false,
-    cover: 'fiat-house-02',
-    focus: '60% 50%',
-    gallery: [
-      { name: 'fiat-house-02', alt: 'Double-height lounge with a shelving wall' },
-      { name: 'fiat-house-01', alt: 'Entrance lobby with a green wall' },
-      { name: 'fiat-house-03', alt: 'Unit kitchen with island' },
-      { name: 'fiat-house-04', alt: 'Unit kitchen, L-shaped' },
-      { name: 'fiat-house-05', alt: 'Kitchen detail, integrated appliances' },
-      { name: 'fiat-house-06', alt: 'Bedroom with built-ins and kitchen beyond' },
-      { name: 'fiat-house-07', alt: 'Building exterior' },
     ],
   },
   {
