@@ -1,0 +1,12 @@
+// Cloudflare Workers (static assets) deployment of the built site.
+// Workers Builds: build command `npm run build`, deploy command `npx wrangler deploy`.
+// The Worker serves ./dist as static assets; there is no Worker script.
+{
+  "name": "rivo",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
