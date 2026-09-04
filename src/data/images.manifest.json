@@ -1,0 +1,435 @@
+{
+  "1404-willow-hoboken-01": {
+    "widths": [
+      800,
+      1086
+    ],
+    "width": 1086,
+    "height": 1448
+  },
+  "1404-willow-hoboken-02": {
+    "widths": [
+      800,
+      1254
+    ],
+    "width": 1254,
+    "height": 1254
+  },
+  "1404-willow-hoboken-03": {
+    "widths": [
+      800,
+      1086
+    ],
+    "width": 1086,
+    "height": 1448
+  },
+  "1404-willow-hoboken-04": {
+    "widths": [
+      800,
+      1086
+    ],
+    "width": 1086,
+    "height": 1448
+  },
+  "1404-willow-hoboken-05": {
+    "widths": [
+      800,
+      1400,
+      1448
+    ],
+    "width": 1448,
+    "height": 1086
+  },
+  "1404-willow-hoboken-06": {
+    "widths": [
+      800,
+      941
+    ],
+    "width": 941,
+    "height": 1672
+  },
+  "1404-willow-hoboken-07": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "1404-willow-hoboken-08": {
+    "widths": [
+      800,
+      1400,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024
+  },
+  "260-washington-belleville-01": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "260-washington-belleville-02": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "260-washington-belleville-03": {
+    "widths": [
+      800,
+      1400,
+      1536
+    ],
+    "width": 1536,
+    "height": 1024
+  },
+  "260-washington-belleville-04": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "260-washington-belleville-05": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "301-washington-hoboken-01": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "301-washington-hoboken-02": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "301-washington-hoboken-03": {
+    "widths": [
+      800,
+      1400,
+      1537
+    ],
+    "width": 1537,
+    "height": 1023
+  },
+  "301-washington-hoboken-04": {
+    "widths": [
+      800,
+      1400,
+      1724
+    ],
+    "width": 1724,
+    "height": 912
+  },
+  "301-washington-hoboken-05": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "cibo-vita-office-01": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "cibo-vita-office-02": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "cibo-vita-office-03": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "cibo-vita-office-04": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "dallas-townhomes-01": {
+    "widths": [
+      800,
+      1124
+    ],
+    "width": 1124,
+    "height": 1399
+  },
+  "dallas-townhomes-02": {
+    "widths": [
+      800,
+      1192
+    ],
+    "width": 1192,
+    "height": 1319
+  },
+  "dallas-townhomes-03": {
+    "widths": [
+      800,
+      1093
+    ],
+    "width": 1093,
+    "height": 1439
+  },
+  "dallas-townhomes-04": {
+    "widths": [
+      800,
+      1084
+    ],
+    "width": 1084,
+    "height": 1451
+  },
+  "dallas-townhomes-05": {
+    "widths": [
+      800,
+      1058
+    ],
+    "width": 1058,
+    "height": 1486
+  },
+  "double-tree-hilton-fort-lee-01": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "double-tree-hilton-fort-lee-02": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "double-tree-hilton-fort-lee-03": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "double-tree-hilton-fort-lee-04": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "double-tree-hilton-fort-lee-05": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "double-tree-hilton-fort-lee-06": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2560
+    ],
+    "width": 2560,
+    "height": 1440
+  },
+  "fiat-house-01": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2909
+    ],
+    "width": 2909,
+    "height": 2138
+  },
+  "fiat-house-02": {
+    "widths": [
+      800,
+      1400,
+      1920
+    ],
+    "width": 1920,
+    "height": 1411
+  },
+  "fiat-house-03": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      3022
+    ],
+    "width": 3022,
+    "height": 2221
+  },
+  "fiat-house-04": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      3300
+    ],
+    "width": 3300,
+    "height": 2423
+  },
+  "fiat-house-05": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      3207
+    ],
+    "width": 3207,
+    "height": 2358
+  },
+  "fiat-house-06": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2816
+    ],
+    "width": 2816,
+    "height": 2072
+  },
+  "fiat-house-07": {
+    "widths": [
+      800,
+      1400,
+      2000,
+      2500
+    ],
+    "width": 2500,
+    "height": 1932
+  },
+  "hudson-cliff-01": {
+    "widths": [
+      800,
+      1400,
+      1672
+    ],
+    "width": 1672,
+    "height": 941
+  },
+  "hudson-cliff-02": {
+    "widths": [
+      800,
+      1400,
+      1920
+    ],
+    "width": 1920,
+    "height": 1080
+  },
+  "hudson-cliff-03": {
+    "widths": [
+      800,
+      1400,
+      1750
+    ],
+    "width": 1750,
+    "height": 2000
+  },
+  "hudson-cliff-04": {
+    "widths": [
+      800,
+      1080
+    ],
+    "width": 1080,
+    "height": 1920
+  },
+  "hudson-cliff-05": {
+    "widths": [
+      800,
+      1400,
+      1535
+    ],
+    "width": 1535,
+    "height": 1024
+  },
+  "hudson-cliff-06": {
+    "widths": [
+      800,
+      1393
+    ],
+    "width": 1393,
+    "height": 1129
+  },
+  "hudson-cliff-07": {
+    "widths": [
+      800,
+      1373
+    ],
+    "width": 1373,
+    "height": 1146
+  },
+  "hudson-cliff-08": {
+    "widths": [
+      800,
+      1400,
+      1920
+    ],
+    "width": 1920,
+    "height": 1080
+  }
+}

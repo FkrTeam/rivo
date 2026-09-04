@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Halden | Architecture studio</title>
+  <meta name="description" content="Halden is an architecture studio. Houses, public buildings and landscapes, designed with a small team and a long view.">
+  <meta name="theme-color" content="#F3F0EA">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/brand/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="module" src="/src/studio/main.js"></script>
+</head>
+<body>
+  <!--
+    Demo homepage for the scroll-driven architectural composition.
+    All copy below is placeholder: studio name, cities, projects and years are
+    invented for layout and should be replaced with real content.
+  -->
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="gl" class="gl" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#hero">Halden</a>
+    <nav class="nav__menu" aria-label="Primary">
+      <a href="#studio">Studio</a>
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- vertical scale: a hairline rule with a tick that tracks the composition's progress -->
+  <div class="scale" aria-hidden="true">
+    <span class="scale__num scale__num--top">00</span>
+    <span class="scale__rule"><span class="scale__tick" id="scale-tick"></span></span>
+    <span class="scale__num scale__num--bottom">01</span>
+  </div>
+
+  <main id="main">
+    <div id="page">
+
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <p class="eyebrow">Architecture studio<span class="eyebrow__sep"></span>Oslo &middot; Zürich</p>
+          <h1 id="hero-title" class="display">Mass, light and<br>the measure between.</h1>
+          <p class="lede">Houses, public buildings and landscapes, designed with a small team and a long view.</p>
+        </div>
+        <div class="hero__foot">
+          <span class="spec">Scroll</span>
+          <span class="spec num">01&thinsp;/&thinsp;05</span>
+        </div>
+      </section>
+
+      <section id="studio" class="section" aria-labelledby="studio-title">
+        <div class="section__inner">
+          <p class="index"><b>01</b><span>Studio</span></p>
+          <div class="text">
+            <h2 id="studio-title" class="statement">We design buildings that hold still while the light moves through them.</h2>
+            <p>Founded by a small group of architects, the studio works at every scale from a garden wall to a civic hall. Each project begins with a physical model: weight, proportion and the fall of daylight are decided before a single drawing is made.</p>
+            <a class="link" href="#approach">Our approach</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="section section--work" aria-labelledby="work-title">
+        <div class="section__inner">
+          <p class="index"><b>02</b><span>Selected work</span></p>
+          <div class="text">
+            <h2 id="work-title" class="h2">Selected work</h2>
+            <ol class="works">
+              <li class="works__row">
+                <span class="works__num num">01</span>
+                <span class="works__title">House on the Ridge</span>
+                <span class="works__meta spec">Residence &middot; Hardanger</span>
+                <span class="works__year spec num">2025</span>
+              </li>
+              <li class="works__row">
+                <span class="works__num num">02</span>
+                <span class="works__title">Chapel of the Quarry</span>
+                <span class="works__meta spec">Cultural &middot; Ticino</span>
+                <span class="works__year spec num">2024</span>
+              </li>
+              <li class="works__row">
+                <span class="works__num num">03</span>
+                <span class="works__title">Lindholm Library</span>
+                <span class="works__meta spec">Public &middot; Oslo</span>
+                <span class="works__year spec num">2023</span>
+              </li>
+              <li class="works__row">
+                <span class="works__num num">04</span>
+                <span class="works__title">Terrace Houses, Enge</span>
+                <span class="works__meta spec">Housing &middot; Zürich</span>
+                <span class="works__year spec num">2022</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="section" aria-labelledby="approach-title">
+        <div class="section__inner">
+          <p class="index"><b>03</b><span>Approach</span></p>
+          <div class="text">
+            <h2 id="approach-title" class="statement">Three things we return to.</h2>
+            <dl class="principles">
+              <div class="principles__item">
+                <dt><span class="num">I</span>Weight</dt>
+                <dd>Buildings should look like they were always going to be there. We work with mass first and openings second.</dd>
+              </div>
+              <div class="principles__item">
+                <dt><span class="num">II</span>Light</dt>
+                <dd>Daylight is the material we cannot buy. Every room is planned around where it enters and where it rests.</dd>
+              </div>
+              <div class="principles__item">
+                <dt><span class="num">III</span>Measure</dt>
+                <dd>A few dimensions, repeated with care, do more than many. The plan sets the rhythm; the section keeps it.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="section__inner">
+        <p class="index index--light"><b>04</b><span>Contact</span></p>
+        <div class="text">
+          <h2 id="contact-title" class="display display--sm">Start with a conversation.</h2>
+          <a class="contact__mail" href="mailto:studio@example.com">studio@example.com</a>
+        </div>
+        <div class="contact__cols">
+          <div>
+            <p class="spec">Oslo</p>
+            <p>Placeholder street 12<br>0150 Oslo</p>
+          </div>
+          <div>
+            <p class="spec">Zürich</p>
+            <p>Musterstrasse 4<br>8001 Zürich</p>
+          </div>
+          <div>
+            <p class="spec">Follow</p>
+            <p><a href="#">Instagram</a><br><a href="#">LinkedIn</a></p>
+          </div>
+        </div>
+        <p class="contact__foot spec">&copy; Halden Architecture Studio &middot; Placeholder content</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

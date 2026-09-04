@@ -1,0 +1,156 @@
+/* RIVO - base: tokens, font, reset, global chrome */
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/brand/fonts/inter-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* brand palette - exact values from the identity document */
+  --ink: #0B0B0B;
+  --red: #D54C3F;
+  --stone: #C9C4BB;
+  --white: #F4F1EB;
+
+  /* derived surfaces and rules (ink lifted by a few steps, stone at low alpha) */
+  --ink-2: #121211;
+  --ink-3: #1A1917;
+  --hair: rgba(201, 196, 187, 0.16);
+  --hair-2: rgba(201, 196, 187, 0.34);
+  --text: var(--white);
+  --text-2: var(--stone);
+  --text-3: rgba(201, 196, 187, 0.62);
+
+  /* sheet geometry */
+  --margin: clamp(14px, 3vw, 52px);
+  --gutter: clamp(16px, 2.2vw, 36px);
+  --inset: calc(var(--margin) + var(--gutter));
+  --nav-h: 64px;
+  --max: 1760px;
+
+  /* the V-cut: the slant of the wordmark's "v" (19 degrees off vertical), the point where the
+     cut meets the bottom of the viewport, the lath pitch inside the cut and the reveal between laths */
+  --cut: 19deg;
+  --cut-foot: 50vw;
+  --lath: clamp(44px, 4vw, 76px);
+  --gap: 6px;
+  --module: 5; /* laths per module: every fifth reveal is doubled, a material transition */
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.7, 0, 0.3, 1);
+
+  --font: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + var(--margin));
+}
+
+body {
+  position: relative; /* the sheet grid is laid over the whole document */
+  margin: 0;
+  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+img, svg { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p, figure, dl, dd { margin: 0; }
+b { font-weight: inherit; }
+
+:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip {
+  position: fixed; top: var(--margin); left: var(--margin); z-index: 100;
+  padding: 0.6rem 1rem; background: var(--white); color: var(--ink); font-weight: 500;
+  transform: translateY(-250%);
+}
+.skip:focus { transform: none; }
+
+/* ---------- the V-cut ----------
+   One dominant gesture, taken from the identity's graphic language: a directional crop at the
+   slant of the wordmark's "v". Left of the cut the sheet is plain ink and carries the copy; right
+   of the cut a field of laths runs parallel to it, each separated by a measured reveal (two
+   hairlines, --gap apart), every fifth reveal doubled so the field reads as panel modules made
+   of slats rather than as stripes. Daylight comes from the top right. The layer is fixed: the
+   page scrolls over it, the cut does not move.
+   Geometry: the cut passes through (--cut-foot, bottom) at --cut off vertical, top leaning right.
+   Both pseudo elements are large rectangles rotated about that point, so the lath pattern is a
+   plain vertical stripe that the rotation carries into alignment with the cut. */
+.bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  --face: rgba(201, 196, 187, 0.030);
+  --line: rgba(201, 196, 187, 0.075);
+  background:
+    radial-gradient(110vmax 70vmax at 88% -8%, rgba(201, 196, 187, 0.075), rgba(201, 196, 187, 0) 55%),
+    var(--ink);
+}
+/* the lath field: its left edge is the cut */
+.bg::after {
+  content: ''; position: absolute; left: var(--cut-foot); bottom: 0;
+  width: 300vw; height: 300vh;
+  transform-origin: 0 100%; transform: rotate(var(--cut));
+  border-left: 1px solid var(--hair-2);
+  box-shadow: inset 14px 0 36px -10px rgba(11, 11, 11, 0.9); /* the cut's shadow on the laths */
+  background-image:
+    /* doubled reveal at the module boundary */
+    repeating-linear-gradient(90deg,
+      transparent 0 calc(var(--lath) * var(--module) - var(--gap)),
+      var(--ink) calc(var(--lath) * var(--module) - var(--gap)) calc(var(--lath) * var(--module))),
+    /* lath: reveal (hairline, ink, hairline) then the face */
+    repeating-linear-gradient(90deg,
+      var(--line) 0 1px,
+      var(--ink) 1px calc(var(--gap) - 1px),
+      var(--line) calc(var(--gap) - 1px) var(--gap),
+      var(--face) var(--gap) var(--lath));
+}
+
+/* drawing-sheet frame: a hairline set in from the viewport, like a title sheet */
+.frame {
+  position: fixed; inset: var(--margin); z-index: 3;
+  border: 1px solid var(--hair); pointer-events: none;
+}
+
+main { position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  :root { --cut-foot: 36vw; --gap: 4px; }
+  .bg { background: radial-gradient(90vmax 60vmax at 80% -6%, rgba(201, 196, 187, 0.07), rgba(201, 196, 187, 0) 55%), var(--ink); }
+}
+
+/* page to page: a short cross-fade instead of a hard cut (same-origin navigations, where supported) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.28s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  @view-transition { navigation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
