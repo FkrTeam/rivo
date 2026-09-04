@@ -14,7 +14,8 @@
     "assets:panel": "node scripts/build-panel-glb.mjs",
     "assets:images": "node scripts/optimize-images.mjs",
     "assets": "npm run assets:panel && npm run assets:images",
-    "check:framing": "node scripts/frame-check.mjs"
+    "check:framing": "node scripts/frame-check.mjs",
+    "index:notebook": "node scripts/notebook-index.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

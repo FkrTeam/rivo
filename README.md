@@ -19,6 +19,7 @@ Asset pipeline:
 ```bash
 npm run assets:panel    # rebuild public/assets/models/panel.glb from src/webgl/panelSpec.js
 npm run assets:images   # assets-src/images/*.{jpg,png,tif,webp} -> public/assets/images/*.webp + manifest
+npm run index:notebook  # NotebookLM photo names (FIAT HOUSE-1, 1404-WILLOW-HOBOKEN-6, ...) -> local files, in src/data/notebook-index.json
 npm run check:framing   # (panel wall only) print where the wall lands on screen per pose and aspect
 ```
 
@@ -107,7 +108,7 @@ the cut crosses the datum height and pins the dot there; it re-runs on resize.
 
 **Projects** — `src/data/projects.js`. Put photography in `assets-src/images/<slug>-NN.jpg`, run `npm run assets:images`, list the names in `gallery` (with alt text), pick a `cover`, write the `summary`, set `featured` for the homepage, then `npm run pages`. Source photography for the current projects is in `Downloads/RIVO-PROJECTS`. Locations are left empty where the project folder gives none; nothing else about a project is asserted beyond what its photographs show.
 
-**Hero frames** — `src/data/hero.js`. Same pipeline; `focus` is the `object-position` used for the cover crop, `HERO_INTERVAL` / `HERO_WIPE` set the timing. In DEV, `window.__rivo.slider.stop()` / `.show(i)` hold or pick a frame for review.
+**Hero frames** — `src/data/hero.js`. Same pipeline; frames are picked by their NotebookLM names, which `npm run index:notebook` resolves to local file names (the notebook numbers each folder's photographs in ASCII order, from the `website/` subfolder where there is one); `focus` is the `object-position` used for the cover crop, `HERO_INTERVAL` / `HERO_WIPE` set the timing. In DEV, `window.__rivo.slider.stop()` / `.show(i)` hold or pick a frame for review.
 
 **KTX2 finish textures** — produce with KTX-Software (`ktx create … --encode uastc`) into `public/assets/textures/`, register in `ASSETS.textures` with `group: 'materials'`.
 

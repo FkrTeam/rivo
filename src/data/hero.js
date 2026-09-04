@@ -1,39 +1,64 @@
 /**
- * Hero slider: one frame per project, in the order they play.
+ * Hero slider: the frames in the order they play.
  *
  * `image.name` is a file in assets-src/images/ run through `npm run assets:images`
  * (the manifest supplies the widths). Titles and places are taken from the
  * project folder names (RIVO-PROJECTS/<address>-<city>); nothing else is
  * asserted about the projects here.
  *
- * Frames are the ones named in the NotebookLM "RIVO" notebook, where each
- * project's photographs are numbered in the ASCII order of the folder
- * (uppercase before lowercase):
- *   260-WASHINGTON-BELLEVILLE-3 = facade-1.jpg  -> 260-washington-belleville-01
- *   301-WASHINGTON-HOBOKEN-5    = facade-3.png  -> 301-washington-hoboken-05
- *   1404-WILLOW-HOBOKEN-6       = website/facade-2.png -> 1404-willow-hoboken-08
+ * Frames are picked by their names in the NotebookLM "RIVO" notebook. The
+ * notebook numbers each project's photographs in the ASCII order of its folder
+ * (website/ subfolder where there is one); `npm run index:notebook` rebuilds
+ * src/data/notebook-index.json, which maps those names to the local files:
+ *   FIAT HOUSE-1              = website/FIAT HOUSE-1.webp -> fiat-house-07
+ *   FIAT HOUSE-2              = website/FIAT HOUSE-2.webp -> fiat-house-02
+ *   1404-WILLOW-HOBOKEN-2     = website/10.png            -> 1404-willow-hoboken-05
+ *   1404-WILLOW-HOBOKEN-6     = website/facade-2.png      -> 1404-willow-hoboken-08
+ *   301-WASHINGTON-HOBOKEN-5  = facade-3.png              -> 301-washington-hoboken-05
+ *   301-WASHINGTON-HOBOKEN-2  = Unit-2.png                -> 301-washington-hoboken-02
  */
 export const heroSlides = [
   {
-    id: '260-washington-belleville',
-    title: '260 Washington',
-    place: 'Belleville',
-    image: { name: '260-washington-belleville-01', alt: '260 Washington, Belleville: street elevation' },
+    id: 'fiat-house-1',
+    title: 'Fiat House',
+    place: '',
+    image: { name: 'fiat-house-07', alt: 'Fiat House: building exterior at dusk' },
+    focus: '50% 45%',
+  },
+  {
+    id: 'fiat-house-2',
+    title: 'Fiat House',
+    place: '',
+    image: { name: 'fiat-house-02', alt: 'Fiat House: double-height lounge with a shelving wall' },
+    focus: '55% 50%',
+  },
+  {
+    id: '1404-willow-hoboken-2',
+    title: '1404 Willow',
+    place: 'Hoboken',
+    image: { name: '1404-willow-hoboken-05', alt: '1404 Willow, Hoboken: amenity lounge with a wood ceiling' },
+    focus: '50% 50%',
+  },
+  {
+    id: '1404-willow-hoboken-6',
+    title: '1404 Willow',
+    place: 'Hoboken',
+    image: { name: '1404-willow-hoboken-08', alt: '1404 Willow, Hoboken: corner elevation' },
     focus: '50% 40%',
   },
   {
-    id: '301-washington-hoboken',
+    id: '301-washington-hoboken-5',
     title: '301 Washington',
     place: 'Hoboken',
     image: { name: '301-washington-hoboken-05', alt: '301 Washington, Hoboken: street view along the storefronts' },
     focus: '50% 45%',
   },
   {
-    id: '1404-willow-hoboken',
-    title: '1404 Willow',
+    id: '301-washington-hoboken-2',
+    title: '301 Washington',
     place: 'Hoboken',
-    image: { name: '1404-willow-hoboken-08', alt: '1404 Willow, Hoboken: corner elevation' },
-    focus: '50% 40%',
+    image: { name: '301-washington-hoboken-02', alt: '301 Washington, Hoboken: unit kitchen, white fronts with an oak tall run' },
+    focus: '50% 50%',
   },
 ];
 
