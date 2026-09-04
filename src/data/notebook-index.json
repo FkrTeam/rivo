@@ -1,27 +1,27 @@
 {
   "260-WASHINGTON-BELLEVILLE-1": {
     "source": "260-WASHINGTON-BELLEVILLE/bathroom.png",
-    "asset": "260-washington-belleville-04"
+    "asset": "260-washington-belleville-01"
   },
   "260-WASHINGTON-BELLEVILLE-2": {
     "source": "260-WASHINGTON-BELLEVILLE/closet.png",
-    "asset": "260-washington-belleville-03"
+    "asset": "260-washington-belleville-02"
   },
   "260-WASHINGTON-BELLEVILLE-3": {
     "source": "260-WASHINGTON-BELLEVILLE/facade-1.jpg",
-    "asset": "260-washington-belleville-01"
+    "asset": "260-washington-belleville-03"
   },
   "260-WASHINGTON-BELLEVILLE-4": {
     "source": "260-WASHINGTON-BELLEVILLE/facade-2.jpg",
-    "asset": "260-washington-belleville-05"
+    "asset": "260-washington-belleville-04"
   },
   "260-WASHINGTON-BELLEVILLE-5": {
     "source": "260-WASHINGTON-BELLEVILLE/kitchen.png",
-    "asset": "260-washington-belleville-02"
+    "asset": "260-washington-belleville-05"
   },
   "FIAT HOUSE-1": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-1.webp",
-    "asset": "fiat-house-07"
+    "asset": "fiat-house-01"
   },
   "FIAT HOUSE-2": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-2.webp",
@@ -33,110 +33,110 @@
   },
   "FIAT HOUSE-4": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-4.webp",
-    "asset": "fiat-house-06"
+    "asset": "fiat-house-04"
   },
   "FIAT HOUSE-5": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-5.webp",
-    "asset": "fiat-house-04"
+    "asset": "fiat-house-05"
   },
   "FIAT HOUSE-6": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-6.webp",
-    "asset": "fiat-house-01"
+    "asset": "fiat-house-06"
   },
   "FIAT HOUSE-7": {
     "source": "BİR - FIAT HOUSE/website/FIAT HOUSE-7.webp",
-    "asset": "fiat-house-05"
+    "asset": "fiat-house-07"
   },
   "CIBO-VITA-OFFICE-1": {
-    "source": "CIBO-VITA-OFFICE/1.png",
+    "source": "CIBO-VITA-OFFICE/CIBO-VITA-OFFICE-1.png",
     "asset": "cibo-vita-office-01"
   },
   "CIBO-VITA-OFFICE-2": {
-    "source": "CIBO-VITA-OFFICE/2.png",
+    "source": "CIBO-VITA-OFFICE/CIBO-VITA-OFFICE-2.png",
     "asset": "cibo-vita-office-02"
   },
   "CIBO-VITA-OFFICE-3": {
-    "source": "CIBO-VITA-OFFICE/3.png",
+    "source": "CIBO-VITA-OFFICE/CIBO-VITA-OFFICE-3.png",
     "asset": "cibo-vita-office-03"
   },
   "CIBO-VITA-OFFICE-4": {
-    "source": "CIBO-VITA-OFFICE/4.png",
+    "source": "CIBO-VITA-OFFICE/CIBO-VITA-OFFICE-4.png",
     "asset": "cibo-vita-office-04"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-1": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/1.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-1.jpg",
     "asset": "double-tree-hilton-fort-lee-01"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-2": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/2.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-2.jpg",
     "asset": "double-tree-hilton-fort-lee-02"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-3": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/3.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-3.jpg",
     "asset": "double-tree-hilton-fort-lee-03"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-4": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/4.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-4.jpg",
     "asset": "double-tree-hilton-fort-lee-04"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-5": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/5.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-5.jpg",
     "asset": "double-tree-hilton-fort-lee-05"
   },
   "DOUBLE-TREE-HILTON-FORTLEE-6": {
-    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/6.jpg",
+    "source": "DOUBLE-TREE-HILTON-FORTLEE/website/DOUBLE-TREE-HILTON-FORTLEE-6.jpg",
     "asset": "double-tree-hilton-fort-lee-06"
   },
   "DALLAS-TOWNHOMES-1": {
     "source": "DÖRT - DALLAS-TOWNHOMES/website/DALLAS-TOWNHOMES-1.png",
-    "asset": "dallas-townhomes-02"
+    "asset": "dallas-townhomes-01"
   },
   "DALLAS-TOWNHOMES-2": {
     "source": "DÖRT - DALLAS-TOWNHOMES/website/DALLAS-TOWNHOMES-2.png",
-    "asset": "dallas-townhomes-05"
+    "asset": "dallas-townhomes-02"
   },
   "DALLAS-TOWNHOMES-3": {
     "source": "DÖRT - DALLAS-TOWNHOMES/website/DALLAS-TOWNHOMES-3.png",
-    "asset": "dallas-townhomes-04"
+    "asset": "dallas-townhomes-03"
   },
   "DALLAS-TOWNHOMES-4": {
     "source": "DÖRT - DALLAS-TOWNHOMES/website/DALLAS-TOWNHOMES-4.png",
-    "asset": "dallas-townhomes-03"
+    "asset": "dallas-townhomes-04"
   },
   "DALLAS-TOWNHOMES-5": {
     "source": "DÖRT - DALLAS-TOWNHOMES/website/DALLAS-TOWNHOMES-5.png",
-    "asset": "dallas-townhomes-01"
+    "asset": "dallas-townhomes-05"
   },
   "HUDSON-CLIFF-1": {
-    "source": "HUDSON-CLIFF/website/1.png",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-1.png",
     "asset": "hudson-cliff-01"
   },
   "HUDSON-CLIFF-2": {
-    "source": "HUDSON-CLIFF/website/2.jpg",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-2.png",
     "asset": "hudson-cliff-02"
   },
   "HUDSON-CLIFF-3": {
-    "source": "HUDSON-CLIFF/website/3.jpg",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-3.png",
     "asset": "hudson-cliff-03"
   },
   "HUDSON-CLIFF-4": {
-    "source": "HUDSON-CLIFF/website/4.jpg",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-4.png",
     "asset": "hudson-cliff-04"
   },
   "HUDSON-CLIFF-5": {
-    "source": "HUDSON-CLIFF/website/5.png",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-5.jpg",
     "asset": "hudson-cliff-05"
   },
   "HUDSON-CLIFF-6": {
-    "source": "HUDSON-CLIFF/website/6.png",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-6.jpg",
     "asset": "hudson-cliff-06"
   },
   "HUDSON-CLIFF-7": {
-    "source": "HUDSON-CLIFF/website/7.png",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-7.jpg",
     "asset": "hudson-cliff-07"
   },
   "HUDSON-CLIFF-8": {
-    "source": "HUDSON-CLIFF/website/8.jpg",
+    "source": "HUDSON-CLIFF/website/HUDSON-CLIFF-8.jpg",
     "asset": "hudson-cliff-08"
   },
   "301-WASHINGTON-HOBOKEN-1": {
@@ -161,15 +161,15 @@
   },
   "1404-WILLOW-HOBOKEN-1": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/1.png",
-    "asset": "1404-willow-hoboken-03"
+    "asset": "1404-willow-hoboken-01"
   },
   "1404-WILLOW-HOBOKEN-2": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/10.png",
-    "asset": "1404-willow-hoboken-05"
+    "asset": "1404-willow-hoboken-02"
   },
   "1404-WILLOW-HOBOKEN-3": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/11.png",
-    "asset": "1404-willow-hoboken-06"
+    "asset": "1404-willow-hoboken-03"
   },
   "1404-WILLOW-HOBOKEN-4": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/4.png",
@@ -177,30 +177,14 @@
   },
   "1404-WILLOW-HOBOKEN-5": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/6.png",
-    "asset": "1404-willow-hoboken-02"
+    "asset": "1404-willow-hoboken-05"
   },
   "1404-WILLOW-HOBOKEN-6": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/facade-2.png",
-    "asset": "1404-willow-hoboken-08"
+    "asset": "1404-willow-hoboken-06"
   },
   "1404-WILLOW-HOBOKEN-7": {
     "source": "İKİ - 1404-WILLOW-HOBOKEN/website/facade.png",
     "asset": "1404-willow-hoboken-07"
-  },
-  "EFENDY-NJ-1": {
-    "source": "İPTAL - EFENDY-NJ/1.png",
-    "asset": null
-  },
-  "EFENDY-NJ-2": {
-    "source": "İPTAL - EFENDY-NJ/2.png",
-    "asset": null
-  },
-  "EFENDY-NJ-3": {
-    "source": "İPTAL - EFENDY-NJ/3.png",
-    "asset": null
-  },
-  "EFENDY-NJ-4": {
-    "source": "İPTAL - EFENDY-NJ/4.png",
-    "asset": null
   }
 }

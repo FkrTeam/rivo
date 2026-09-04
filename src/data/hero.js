@@ -10,10 +10,10 @@
  * notebook numbers each project's photographs in the ASCII order of its folder
  * (website/ subfolder where there is one); `npm run index:notebook` rebuilds
  * src/data/notebook-index.json, which maps those names to the local files:
- *   FIAT HOUSE-1              = website/FIAT HOUSE-1.webp -> fiat-house-07
+ *   FIAT HOUSE-1              = website/FIAT HOUSE-1.webp -> fiat-house-01
  *   FIAT HOUSE-2              = website/FIAT HOUSE-2.webp -> fiat-house-02
- *   1404-WILLOW-HOBOKEN-2     = website/10.png            -> 1404-willow-hoboken-05
- *   1404-WILLOW-HOBOKEN-6     = website/facade-2.png      -> 1404-willow-hoboken-08
+ *   1404-WILLOW-HOBOKEN-2     = website/10.png            -> 1404-willow-hoboken-02
+ *   1404-WILLOW-HOBOKEN-6     = website/facade-2.png      -> 1404-willow-hoboken-06
  *   301-WASHINGTON-HOBOKEN-5  = facade-3.png              -> 301-washington-hoboken-05
  *   301-WASHINGTON-HOBOKEN-2  = Unit-2.png                -> 301-washington-hoboken-02
  */
@@ -22,7 +22,7 @@ export const heroSlides = [
     id: 'fiat-house-1',
     title: 'Fiat House',
     place: '',
-    image: { name: 'fiat-house-07', alt: 'Fiat House: building exterior at dusk' },
+    image: { name: 'fiat-house-01', alt: 'Fiat House: building exterior at dusk' },
     focus: '50% 45%',
   },
   {
@@ -36,14 +36,14 @@ export const heroSlides = [
     id: '1404-willow-hoboken-2',
     title: '1404 Willow',
     place: 'Hoboken',
-    image: { name: '1404-willow-hoboken-05', alt: '1404 Willow, Hoboken: amenity lounge with a wood ceiling' },
+    image: { name: '1404-willow-hoboken-02', alt: '1404 Willow, Hoboken: amenity lounge with a wood ceiling' },
     focus: '50% 50%',
   },
   {
     id: '1404-willow-hoboken-6',
     title: '1404 Willow',
     place: 'Hoboken',
-    image: { name: '1404-willow-hoboken-08', alt: '1404 Willow, Hoboken: corner elevation' },
+    image: { name: '1404-willow-hoboken-06', alt: '1404 Willow, Hoboken: corner elevation' },
     focus: '50% 40%',
   },
   {
