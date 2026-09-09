@@ -112,12 +112,18 @@ b { font-weight: inherit; }
     radial-gradient(110vmax 70vmax at 88% -8%, rgba(201, 196, 187, 0.075), rgba(201, 196, 187, 0) 55%),
     var(--ink);
 }
+/* the cut itself: one line, drawn over the laths so the field keeps its geometry */
+.bg::before {
+  content: ''; position: absolute; left: var(--cut-foot); bottom: 0; z-index: 1;
+  width: 3px; height: 300vh; background: var(--hair-2);
+  transform-origin: 0 100%; transform: rotate(var(--cut));
+}
 /* the lath field: its left edge is the cut */
 .bg::after {
-  content: ''; position: absolute; left: var(--cut-foot); bottom: 0;
+  content: ''; position: absolute; left: var(--cut-foot); bottom: 0; z-index: 0;
   width: 300vw; height: 300vh;
   transform-origin: 0 100%; transform: rotate(var(--cut));
-  border-left: 3px solid var(--hair-2);
+  border-left: 1px solid var(--hair-2);
   box-shadow: inset 14px 0 36px -10px rgba(11, 11, 11, 0.9); /* the cut's shadow on the laths */
   background-image:
     /* doubled reveal at the module boundary */

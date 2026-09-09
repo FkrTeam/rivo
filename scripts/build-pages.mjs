@@ -49,7 +49,7 @@ const head = (title, description, path) => `<!doctype html>
   <meta property="og:title" content="${esc(title)} | RIVO">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://rivowork.com${path}">
+  <link rel="canonical" href="https://rivomade.com${path}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/brand/fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <!-- painted before any stylesheet arrives: ink, never a white flash -->
@@ -96,7 +96,7 @@ const foot = `  </main>
         <a class="footer__top" href="#main">Back to top</a>
       </div>
       <div class="footer__bar">
-        <a class="spec footer__link" href="mailto:hello@rivowork.com">hello@rivowork.com</a>
+        <a class="spec footer__link" href="mailto:hello@rivomade.com">hello@rivomade.com</a>
         <span class="spec footer__places">Miami / New York / Istanbul</span>
         <span class="spec">&copy; <span data-year>2026</span> RIVO WORK</span>
       </div>

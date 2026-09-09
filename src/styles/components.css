@@ -143,12 +143,18 @@
     linear-gradient(90deg, rgba(11, 11, 11, 0.35) 0%, rgba(11, 11, 11, 0) 40%),
     rgba(11, 11, 11, 0.22);
 }
-/* the cut edge: hairline and the shadow the cut throws onto the frame */
+/* the cut edge: the line and the shadow the cut throws onto the frame. The line
+   is its own layer (see .bg::before) so the shadow keeps its original offset. */
+.hero__slider::before {
+  content: ''; position: absolute; left: var(--cut-foot); bottom: 0; z-index: 4; pointer-events: none;
+  width: 3px; height: 300vh; background: var(--hair-2);
+  transform-origin: 0 100%; transform: rotate(var(--cut));
+}
 .hero__slider::after {
   content: ''; position: absolute; left: var(--cut-foot); bottom: 0; z-index: 3; pointer-events: none;
   width: 200vw; height: 300vh;
   transform-origin: 0 100%; transform: rotate(var(--cut));
-  border-left: 3px solid var(--hair-2);
+  border-left: 1px solid var(--hair-2);
   box-shadow: inset 18px 0 40px -12px rgba(11, 11, 11, 0.85);
 }
 .slider__caption {

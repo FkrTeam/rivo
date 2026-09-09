@@ -166,7 +166,7 @@ export const projects = [
     summary:
       'Workplace interiors for Cibo Vita. A tiered seating stair with upholstered steps opens the floor, a café counter and open shelving sit under planted lighting, and meeting alcoves and reception are set in oak against terrazzo.',
     featured: false,
-    cover: 'cibo-vita-office-01',
+    cover: 'cibo-vita-office-03',
     focus: '50% 50%',
     gallery: [
       { name: 'cibo-vita-office-03', alt: 'Café counter with open shelving' },
