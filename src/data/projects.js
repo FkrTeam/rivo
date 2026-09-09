@@ -20,7 +20,7 @@ export const projects = [
   {
     slug: 'fiat-house',
     title: 'Fiat House',
-    location: '',
+    location: 'Fort Lee, NJ',
     sector: 'Residential',
     scope: 'Amenity lounge, kitchens, bedroom built-ins',
     summary:
@@ -29,8 +29,8 @@ export const projects = [
     cover: 'fiat-house-02',
     focus: '60% 50%',
     gallery: [
-      { name: 'fiat-house-02', alt: 'Double-height lounge with a shelving wall' },
       { name: 'fiat-house-06', alt: 'Entrance lobby with a green wall' },
+      { name: 'fiat-house-02', alt: 'Double-height lounge with a shelving wall' },
       { name: 'fiat-house-03', alt: 'Unit kitchen with island' },
       { name: 'fiat-house-05', alt: 'Unit kitchen, L-shaped' },
       { name: 'fiat-house-07', alt: 'Kitchen detail, integrated appliances' },
@@ -41,28 +41,28 @@ export const projects = [
   {
     slug: '1404-willow-hoboken',
     title: '1404 Willow',
-    location: 'Hoboken',
+    location: 'Hoboken, NJ',
     sector: 'Residential',
     scope: 'Lobby, mail room, stair screen, amenity spaces',
     summary:
       'Lobby, mail room and amenity floor of a residential building on Willow Avenue, Hoboken. Pale wood lines the corridors and ceilings, a lath screen runs along the stair, and the mailboxes sit in dark lacquer volumes cut into the timber.',
     featured: true,
-    cover: '1404-willow-hoboken-07',
+    cover: '1404-willow-hoboken-06',
     focus: '50% 45%',
     gallery: [
+      { name: '1404-willow-hoboken-06', alt: 'Corner elevation' },
       { name: '1404-willow-hoboken-07', alt: 'Street elevation, corner view' },
       { name: '1404-willow-hoboken-05', alt: 'Lath wall along the stair, lobby' },
       { name: '1404-willow-hoboken-01', alt: 'Wood-lined corridor with artwork' },
       { name: '1404-willow-hoboken-04', alt: 'Mail room: dark lacquer mailboxes in a timber-lined space' },
       { name: '1404-willow-hoboken-02', alt: 'Amenity lounge with a wood ceiling' },
       { name: '1404-willow-hoboken-03', alt: 'Lounge corridor, dark wall panels against timber' },
-      { name: '1404-willow-hoboken-06', alt: 'Corner elevation' },
     ],
   },
   {
     slug: '301-washington-hoboken',
     title: '301 Washington',
-    location: 'Hoboken',
+    location: 'Hoboken, NJ',
     sector: 'Residential',
     scope: 'Unit kitchens',
     summary:
@@ -79,28 +79,9 @@ export const projects = [
     ],
   },
   {
-    slug: '260-washington-belleville',
-    title: '260 Washington',
-    location: 'Belleville',
-    sector: 'Residential',
-    scope: 'Kitchens, wardrobes, vanities',
-    summary:
-      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
-    featured: false,
-    cover: '260-washington-belleville-03',
-    focus: '50% 40%',
-    gallery: [
-      { name: '260-washington-belleville-03', alt: 'Street elevation' },
-      { name: '260-washington-belleville-05', alt: 'Unit kitchen and living room in pale oak' },
-      { name: '260-washington-belleville-02', alt: 'Open wardrobe system with lighting' },
-      { name: '260-washington-belleville-01', alt: 'Bathroom with a floating oak vanity' },
-      { name: '260-washington-belleville-04', alt: 'Building elevation, rear' },
-    ],
-  },
-  {
     slug: 'double-tree-hilton-fort-lee',
     title: 'DoubleTree by Hilton',
-    location: 'Fort Lee',
+    location: 'Fort Lee, NJ',
     sector: 'Hospitality',
     scope: 'Reception, lobby, bar, restaurant, boardroom, ballroom',
     summary:
@@ -118,9 +99,28 @@ export const projects = [
     ],
   },
   {
+    slug: '260-washington-belleville',
+    title: '260 Washington',
+    location: 'Belleville, NJ',
+    sector: 'Residential',
+    scope: 'Kitchens, wardrobes, vanities',
+    summary:
+      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
+    featured: false,
+    cover: '260-washington-belleville-03',
+    focus: '50% 40%',
+    gallery: [
+      { name: '260-washington-belleville-03', alt: 'Street elevation' },
+      { name: '260-washington-belleville-05', alt: 'Unit kitchen and living room in pale oak' },
+      { name: '260-washington-belleville-02', alt: 'Open wardrobe system with lighting' },
+      { name: '260-washington-belleville-01', alt: 'Bathroom with a floating oak vanity' },
+      { name: '260-washington-belleville-04', alt: 'Building elevation, rear' },
+    ],
+  },
+  {
     slug: 'hudson-cliff',
     title: 'Hudson Cliff',
-    location: '',
+    location: 'Fort Lee, NJ',
     sector: 'Residential',
     scope: 'Lobby, elevator hall, kitchens, vanities, wardrobes',
     summary:
@@ -142,7 +142,7 @@ export const projects = [
   {
     slug: 'dallas-townhomes',
     title: 'Dallas Townhomes',
-    location: 'Dallas',
+    location: 'Dallas, TX',
     sector: 'Residential',
     scope: 'Kitchens, vanities',
     summary:
@@ -151,17 +151,16 @@ export const projects = [
     cover: 'dallas-townhomes-01',
     focus: '50% 50%',
     gallery: [
+      { name: 'dallas-townhomes-05', alt: 'Townhouse exteriors' },
       { name: 'dallas-townhomes-01', alt: 'Black high-gloss kitchen with island' },
-      { name: 'dallas-townhomes-04', alt: 'Kitchen island in black stone' },
       { name: 'dallas-townhomes-03', alt: 'Kitchen, view along the island' },
       { name: 'dallas-townhomes-02', alt: 'Bathroom with an oak vanity' },
-      { name: 'dallas-townhomes-05', alt: 'Townhouse exteriors' },
     ],
   },
   {
     slug: 'cibo-vita-office',
     title: 'Cibo Vita Office',
-    location: '',
+    location: 'Totowa, NJ',
     sector: 'Commercial',
     scope: 'Tiered seating, café counter, meeting alcoves, reception',
     summary:
@@ -170,8 +169,8 @@ export const projects = [
     cover: 'cibo-vita-office-01',
     focus: '50% 50%',
     gallery: [
-      { name: 'cibo-vita-office-01', alt: 'Tiered seating stair and reception' },
       { name: 'cibo-vita-office-03', alt: 'Café counter with open shelving' },
+      { name: 'cibo-vita-office-01', alt: 'Tiered seating stair and reception' },
       { name: 'cibo-vita-office-02', alt: 'Meeting alcove in oak' },
       { name: 'cibo-vita-office-04', alt: 'Reception and lounge' },
     ],

@@ -30,10 +30,10 @@
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
     <nav id="nav-menu" class="nav__menu" aria-label="Primary">
       <ul class="nav__list">
+        <li><a href="#about" data-section="about">About</a></li>
         <li><a href="#work" data-section="work">Work</a></li>
         <li><a href="#capabilities" data-section="capabilities">Capabilities</a></li>
         <li><a href="#process" data-section="process">Process</a></li>
-        <li><a href="#about" data-section="about">About</a></li>
         <li><a href="#contact" data-section="contact">Contact</a></li>
       </ul>
       <span class="nav__dot" aria-hidden="true"></span>
@@ -87,11 +87,50 @@
       </div>
     </section>
 
+    <!-- SELECTED WORK : project system -->
+    <section id="work" class="section work" aria-labelledby="work-title">
+      <div class="section__inner">
+        <div class="section__head">
+          <p class="index"><b>02</b> / Selected work</p>
+          <h2 id="work-title">Selected work.</h2>
+        </div>
+        <!-- projects:start (featured cards are written here by scripts/build-pages.mjs) -->
+        <ul class="sheets" data-projects>
+          <li class="sheet" data-project="fiat-house">
+    <a class="sheet__link" href="/projects/fiat-house.html" aria-label="Fiat House: open project">
+      <figure class="sheet__figure"><img src="/assets/images/fiat-house-02-1920.webp" srcset="/assets/images/fiat-house-02-800.webp 800w, /assets/images/fiat-house-02-1400.webp 1400w, /assets/images/fiat-house-02-1920.webp 1920w" sizes="(max-width: 720px) 100vw, 50vw" width="1920" height="1411" style="object-position: 60% 50%" loading="eager" decoding="async" alt="Fiat House, Fort Lee, NJ"></figure>
+      <div class="sheet__block">
+        <div class="sheet__cell sheet__cell--wide"><span class="spec">Project <b class="num">01</b></span><h3>Fiat House</h3></div>
+        <div class="sheet__cell"><span class="spec">Location</span><span class="value">Fort Lee, NJ</span></div>
+        <div class="sheet__cell"><span class="spec">Sector</span><span class="value">Residential</span></div>
+        <div class="sheet__cell sheet__cell--wide"><span class="spec">Scope</span><span class="value">Amenity lounge, kitchens, bedroom built-ins</span></div>
+      </div>
+    </a>
+  </li>
+          <li class="sheet" data-project="1404-willow-hoboken">
+    <a class="sheet__link" href="/projects/1404-willow-hoboken.html" aria-label="1404 Willow: open project">
+      <figure class="sheet__figure"><img src="/assets/images/1404-willow-hoboken-06-1536.webp" srcset="/assets/images/1404-willow-hoboken-06-800.webp 800w, /assets/images/1404-willow-hoboken-06-1400.webp 1400w, /assets/images/1404-willow-hoboken-06-1536.webp 1536w" sizes="(max-width: 720px) 100vw, 50vw" width="1536" height="1024" style="object-position: 50% 45%" loading="eager" decoding="async" alt="1404 Willow, Hoboken, NJ"></figure>
+      <div class="sheet__block">
+        <div class="sheet__cell sheet__cell--wide"><span class="spec">Project <b class="num">02</b></span><h3>1404 Willow</h3></div>
+        <div class="sheet__cell"><span class="spec">Location</span><span class="value">Hoboken, NJ</span></div>
+        <div class="sheet__cell"><span class="spec">Sector</span><span class="value">Residential</span></div>
+        <div class="sheet__cell sheet__cell--wide"><span class="spec">Scope</span><span class="value">Lobby, mail room, stair screen, amenity spaces</span></div>
+      </div>
+    </a>
+  </li>
+        </ul>
+        <!-- projects:end -->
+        <div class="sheets__more">
+          <a class="more" href="/projects.html"><span>More projects</span><i aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
     <!-- CAPABILITIES -->
     <section id="capabilities" class="section capabilities" aria-labelledby="capabilities-title">
       <div class="section__inner">
         <div class="section__head">
-          <p class="index"><b>02</b> / Capabilities</p>
+          <p class="index"><b>03</b> / Capabilities</p>
           <h2 id="capabilities-title">Four stages. One system.</h2>
         </div>
         <ol class="stages">
@@ -123,54 +162,15 @@
     <section id="sectors" class="section sectors" aria-labelledby="sectors-title">
       <div class="section__inner">
         <div class="section__head">
-          <p class="index"><b>03</b> / Sectors</p>
+          <p class="index"><b>04</b> / Sectors</p>
           <h2 id="sectors-title">Where the work goes.</h2>
         </div>
         <ul class="bars">
           <li class="bar"><h3>Hospitality</h3><p>Guestrooms, suites, lobbies, bars and restaurants.</p></li>
           <li class="bar"><h3>Residential</h3><p>Private residences: kitchens, wardrobes, libraries and wall systems.</p></li>
           <li class="bar"><h3>Retail</h3><p>Fixtures, wall systems and fitting rooms.</p></li>
-          <li class="bar"><h3>High-performance commercial</h3><p>Reception, boardrooms and workplace interiors with demanding tolerances.</p></li>
+          <li class="bar"><h3>Commercial</h3><p>Reception, boardrooms and workplace interiors with demanding tolerances.</p></li>
         </ul>
-      </div>
-    </section>
-
-    <!-- SELECTED WORK : project system -->
-    <section id="work" class="section work" aria-labelledby="work-title">
-      <div class="section__inner">
-        <div class="section__head">
-          <p class="index"><b>04</b> / Selected work</p>
-          <h2 id="work-title">Selected work.</h2>
-        </div>
-        <!-- projects:start (featured cards are written here by scripts/build-pages.mjs) -->
-        <ul class="sheets" data-projects>
-          <li class="sheet" data-project="fiat-house">
-    <a class="sheet__link" href="/projects/fiat-house.html" aria-label="Fiat House: open project">
-      <figure class="sheet__figure"><img src="/assets/images/fiat-house-02-1920.webp" srcset="/assets/images/fiat-house-02-800.webp 800w, /assets/images/fiat-house-02-1400.webp 1400w, /assets/images/fiat-house-02-1920.webp 1920w" sizes="(max-width: 720px) 100vw, 50vw" width="1920" height="1411" style="object-position: 60% 50%" loading="eager" decoding="async" alt="Fiat House"></figure>
-      <div class="sheet__block">
-        <div class="sheet__cell sheet__cell--wide"><span class="spec">Project <b class="num">01</b></span><h3>Fiat House</h3></div>
-        <div class="sheet__cell"><span class="spec">Location</span><span class="value">—</span></div>
-        <div class="sheet__cell"><span class="spec">Sector</span><span class="value">Residential</span></div>
-        <div class="sheet__cell sheet__cell--wide"><span class="spec">Scope</span><span class="value">Amenity lounge, kitchens, bedroom built-ins</span></div>
-      </div>
-    </a>
-  </li>
-          <li class="sheet" data-project="1404-willow-hoboken">
-    <a class="sheet__link" href="/projects/1404-willow-hoboken.html" aria-label="1404 Willow: open project">
-      <figure class="sheet__figure"><img src="/assets/images/1404-willow-hoboken-07-1672.webp" srcset="/assets/images/1404-willow-hoboken-07-800.webp 800w, /assets/images/1404-willow-hoboken-07-1400.webp 1400w, /assets/images/1404-willow-hoboken-07-1672.webp 1672w" sizes="(max-width: 720px) 100vw, 50vw" width="1672" height="941" style="object-position: 50% 45%" loading="eager" decoding="async" alt="1404 Willow, Hoboken"></figure>
-      <div class="sheet__block">
-        <div class="sheet__cell sheet__cell--wide"><span class="spec">Project <b class="num">02</b></span><h3>1404 Willow</h3></div>
-        <div class="sheet__cell"><span class="spec">Location</span><span class="value">Hoboken</span></div>
-        <div class="sheet__cell"><span class="spec">Sector</span><span class="value">Residential</span></div>
-        <div class="sheet__cell sheet__cell--wide"><span class="spec">Scope</span><span class="value">Lobby, mail room, stair screen, amenity spaces</span></div>
-      </div>
-    </a>
-  </li>
-        </ul>
-        <!-- projects:end -->
-        <div class="sheets__more">
-          <a class="more" href="/projects.html"><span>More projects</span><i aria-hidden="true"></i></a>
-        </div>
       </div>
     </section>
 

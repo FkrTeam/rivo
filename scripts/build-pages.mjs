@@ -6,7 +6,8 @@
  * Run:  npm run pages   (also runs before `dev` and `build`)
  *
  * The pages are plain HTML (content is in the markup, not rendered by JS) and
- * load src/page.js for the shared chrome. Images come from the manifest that
+ * load src/page.js for the shared chrome. Detail-page plates are all drawn at
+ * one proportion (set in CSS) and stack in a single column. Images come from the manifest that
  * `npm run assets:images` writes; names without a manifest entry are skipped.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -70,10 +71,10 @@ const head = (title, description, path) => `<!doctype html>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
     <nav id="nav-menu" class="nav__menu" aria-label="Primary" data-current="work">
       <ul class="nav__list">
+        <li><a href="/#about" data-section="about">About</a></li>
         <li><a href="/projects.html" data-section="work">Work</a></li>
         <li><a href="/#capabilities" data-section="capabilities">Capabilities</a></li>
         <li><a href="/#process" data-section="process">Process</a></li>
-        <li><a href="/#about" data-section="about">About</a></li>
         <li><a href="/#contact" data-section="contact">Contact</a></li>
       </ul>
       <span class="nav__dot" aria-hidden="true"></span>
@@ -144,16 +145,13 @@ writeFileSync(resolve(root, 'projects.html'), listPage);
 /* ---------- detail pages ---------- */
 mkdirSync(resolve(root, 'projects'), { recursive: true });
 projects.forEach((p, i) => {
-  const prev = projects[(i - 1 + projects.length) % projects.length];
-  const next = projects[(i + 1) % projects.length];
   const plates = p.gallery
     .map((g, k) => {
       const e = img(g.name);
       if (!e) return '';
-      const portrait = e.height > e.width;
-      return `<li class="plate ${portrait ? 'plate--portrait' : 'plate--landscape'}">
-            <figure class="plate__figure" style="aspect-ratio: ${e.width} / ${e.height}">
-              <img src="${e.src}" srcset="${e.srcset}" sizes="${portrait ? '(max-width: 720px) 100vw, 40vw' : '(max-width: 720px) 100vw, 58vw'}" width="${e.width}" height="${e.height}" loading="${k === 0 ? 'eager' : 'lazy'}" decoding="async" ${k === 0 ? 'fetchpriority="high"' : ''} alt="${esc(g.alt)}">
+      return `<li class="plate">
+            <figure class="plate__figure">
+              <img src="${e.src}" srcset="${e.srcset}" sizes="(max-width: 720px) 100vw, 80vw" width="${e.width}" height="${e.height}" loading="${k === 0 ? 'eager' : 'lazy'}" decoding="async" ${k === 0 ? 'fetchpriority="high"' : ''} alt="${esc(g.alt)}">
               <figcaption class="spec"><b class="num">${pad(k + 1)}</b> / ${esc(g.alt)}</figcaption>
             </figure>
           </li>`;
@@ -181,10 +179,8 @@ projects.forEach((p, i) => {
         <ul class="plates">
           ${plates}
         </ul>
-        <nav class="project__nav" aria-label="Other projects">
-          <a class="project__nav-link" href="${projectUrl(prev)}" rel="prev"><span class="spec">Previous</span><span class="project__nav-title">${esc(prev.title)}</span></a>
-          <a class="project__nav-link project__nav-link--all" href="/projects.html"><span class="spec">All projects</span><span class="project__nav-title">${pad(projects.length)} sheets</span></a>
-          <a class="project__nav-link project__nav-link--next" href="${projectUrl(next)}" rel="next"><span class="spec">Next</span><span class="project__nav-title">${esc(next.title)}</span></a>
+        <nav class="project__nav" aria-label="All projects">
+          <a class="project__nav-link project__nav-link--all" href="/projects.html"><span class="project__nav-title">All projects</span></a>
         </nav>
       </div>
     </article>
