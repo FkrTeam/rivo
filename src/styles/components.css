@@ -334,24 +334,30 @@
 }
 .plate__figure figcaption b { color: var(--red); }
 
-/* the foot of a project sheet: one way back, centred */
+/* the foot of a project sheet: the sheet before and after, and the way back to
+   all of them, set larger in the middle */
 .project__nav {
-  display: grid; justify-items: center;
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--gutter);
+  align-items: center;
   margin-top: clamp(72px, 9vw, 140px); border-top: 1px solid var(--hair);
 }
 .project__nav-link {
-  display: grid; padding: clamp(30px, 4vw, 48px) 0; color: var(--text-2);
+  display: grid; row-gap: 8px; padding: clamp(30px, 4vw, 48px) 0; color: var(--text-2);
   transition: color 0.3s ease;
 }
 .project__nav-link:hover, .project__nav-link:focus-visible { color: var(--white); }
 .project__nav-link--all { text-align: center; }
-.project__nav-title { font-weight: 700; font-size: clamp(1.75rem, 3vw, 2.75rem); letter-spacing: -0.028em; line-height: 1.1; }
+.project__nav-link--next { text-align: right; }
+.project__nav-title { font-weight: 700; font-size: clamp(1.25rem, 1.8vw, 1.75rem); letter-spacing: -0.024em; line-height: 1.1; }
+.project__nav-link--all .project__nav-title { font-size: clamp(1.75rem, 3vw, 2.75rem); letter-spacing: -0.028em; }
 
 @media (max-width: 900px) {
   .page .section__head h1 { grid-column: 1 / -1; }
   .project__intro .col-l, .project__intro .col-r { grid-column: 1 / -1; }
   .plate { grid-column: 1 / -1; }
   .plates { --plate-ratio: 4 / 3; }
+  .project__nav { grid-template-columns: 1fr 1fr; }
+  .project__nav-link--all { grid-column: 1 / -1; grid-row: 1; padding-bottom: 0; }
 }
 
 /* ---------- detail : terms ---------- */

@@ -145,6 +145,8 @@ writeFileSync(resolve(root, 'projects.html'), listPage);
 /* ---------- detail pages ---------- */
 mkdirSync(resolve(root, 'projects'), { recursive: true });
 projects.forEach((p, i) => {
+  const prev = projects[(i - 1 + projects.length) % projects.length];
+  const next = projects[(i + 1) % projects.length];
   const plates = p.gallery
     .map((g, k) => {
       const e = img(g.name);
@@ -179,8 +181,10 @@ projects.forEach((p, i) => {
         <ul class="plates">
           ${plates}
         </ul>
-        <nav class="project__nav" aria-label="All projects">
+        <nav class="project__nav" aria-label="Other projects">
+          <a class="project__nav-link" href="${projectUrl(prev)}" rel="prev"><span class="spec">Previous</span><span class="project__nav-title">${esc(prev.title)}</span></a>
           <a class="project__nav-link project__nav-link--all" href="/projects.html"><span class="project__nav-title">All projects</span></a>
+          <a class="project__nav-link project__nav-link--next" href="${projectUrl(next)}" rel="next"><span class="spec">Next</span><span class="project__nav-title">${esc(next.title)}</span></a>
         </nav>
       </div>
     </article>
