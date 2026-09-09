@@ -93,7 +93,15 @@ const foot = `  </main>
           <svg class="footer__mark" viewBox="0 0 567.19 244.91" aria-hidden="true"><use href="#rivo-wordmark"/></svg>
         </a>
         <p class="footer__line">rhythm, built.</p>
-        <a class="footer__top" href="#main">Back to top</a>
+        <div class="footer__side">
+          <!-- social: the links are not published yet; add href="..." to each <a> to switch them on -->
+          <ul class="social">
+            <li><a class="social__link" aria-label="RIVO on Instagram"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-instagram"/></svg></a></li>
+            <li><a class="social__link" aria-label="RIVO on X"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-x"/></svg></a></li>
+            <li><a class="social__link" aria-label="RIVO on LinkedIn"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-linkedin"/></svg></a></li>
+          </ul>
+          <a class="footer__top" href="#main">Back to top</a>
+        </div>
       </div>
       <div class="footer__bar">
         <a class="spec footer__link" href="mailto:hello@rivomade.com">hello@rivomade.com</a>
