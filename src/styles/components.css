@@ -215,14 +215,12 @@
 .defs__row dd, .defs__row > span:last-child { color: var(--text-2); font-size: 1.0625rem; line-height: 1.5; }
 
 .name { margin-top: clamp(80px, 10vw, 160px); align-items: center; }
-/* the name, set as a drawing: the wordmark in white over its own construction
-   in red, and the line between ri and vo carried through the whole sheet */
-.name__mark { display: block; margin: 0; max-width: none; }
-.mark { display: block; width: 100%; height: auto; overflow: visible; }
-.mark__draw { stroke: var(--red); opacity: 0.8; }
-.mark__mid { stroke: var(--red); stroke-width: 3; }
-.mark__solid { color: var(--white); }
-.mark__edge { color: transparent; stroke: var(--red); stroke-width: 1.1; opacity: 0.9; }
+.name__mark {
+  display: flex; align-items: center; gap: 0.18em;
+  font-weight: 900; font-size: clamp(4rem, 9vw, 9.5rem); letter-spacing: -0.05em; line-height: 0.9;
+  color: var(--white); max-width: none;
+}
+.name__mark i { display: block; width: 0.55em; height: 1px; background: var(--white); margin: 0 0.1em; }
 .name h3 { margin-bottom: 14px; }
 
 /* ---------- capabilities : sequence schedule ---------- */
