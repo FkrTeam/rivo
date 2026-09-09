@@ -1,6 +1,7 @@
 /**
  * Projects: the single source for the homepage cards, the project list page
- * (projects.html) and the project detail pages (projects/<slug>.html, generated
+ * (projects.html, served at /projects) and the detail pages (projects/<slug>.html,
+ * served at /projects/<slug>, generated
  * by scripts/build-pages.mjs). Plain data, no imports: Node reads this file too.
  *
  * Photography lives in assets-src/images/<slug>-NN.<ext> and goes through
@@ -177,5 +178,5 @@ export const projects = [
   },
 ];
 
-export const projectUrl = (p) => `/projects/${p.slug}.html`;
+export const projectUrl = (p) => `/projects/${p.slug}`;
 export const featuredProjects = () => projects.filter((p) => p.featured);

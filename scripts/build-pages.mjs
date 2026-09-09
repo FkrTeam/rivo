@@ -72,7 +72,7 @@ const head = (title, description, path) => `<!doctype html>
     <nav id="nav-menu" class="nav__menu" aria-label="Primary" data-current="work">
       <ul class="nav__list">
         <li><a href="/#about" data-section="about">About</a></li>
-        <li><a href="/projects.html" data-section="work">Work</a></li>
+        <li><a href="/projects" data-section="work">Work</a></li>
         <li><a href="/#capabilities" data-section="capabilities">Capabilities</a></li>
         <li><a href="/#process" data-section="process">Process</a></li>
         <li><a href="/#contact" data-section="contact">Contact</a></li>
@@ -126,7 +126,7 @@ function card(p, i) {
 }
 
 /* ---------- list page ---------- */
-const listPage = head('Projects', 'Selected architectural millwork projects by RIVO: hospitality, residential and commercial interiors.', '/projects.html') +
+const listPage = head('Projects', 'Selected architectural millwork projects by RIVO: hospitality, residential and commercial interiors.', '/projects') +
 `    <section id="projects" class="section work" aria-labelledby="projects-title">
       <div class="section__inner">
         <div class="section__head">
@@ -165,7 +165,7 @@ projects.forEach((p, i) => {
 `    <article id="project" class="section project" aria-labelledby="project-title">
       <div class="section__inner">
         <div class="section__head">
-          <p class="index"><b>${pad(i + 1)}</b> / <a class="index__link" href="/projects.html">Projects</a></p>
+          <p class="index"><b>${pad(i + 1)}</b> / <a class="index__link" href="/projects">Projects</a></p>
           <h1 id="project-title" class="h2">${esc(p.title)}</h1>
         </div>
         <div class="grid project__intro">
@@ -183,7 +183,7 @@ projects.forEach((p, i) => {
         </ul>
         <nav class="project__nav" aria-label="Other projects">
           <a class="project__nav-link" href="${projectUrl(prev)}" rel="prev"><span class="spec">Previous</span><span class="project__nav-title">${esc(prev.title)}</span></a>
-          <a class="project__nav-link project__nav-link--all" href="/projects.html"><span class="project__nav-title">All projects</span></a>
+          <a class="project__nav-link project__nav-link--all" href="/projects"><span class="project__nav-title">All projects</span></a>
           <a class="project__nav-link project__nav-link--next" href="${projectUrl(next)}" rel="next"><span class="spec">Next</span><span class="project__nav-title">${esc(next.title)}</span></a>
         </nav>
       </div>

@@ -1,8 +1,29 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
-import { readdirSync } from 'node:fs';
+import { readdirSync, existsSync } from 'node:fs';
+import { extname, join } from 'node:path';
 
 const page = (name) => fileURLToPath(new URL(name, import.meta.url));
+
+/**
+ * Clean URLs, the way the deployed Worker serves them: /projects is
+ * projects.html, /projects/fiat-house is projects/fiat-house.html. The site
+ * links to those paths, so dev and preview must resolve them too - otherwise
+ * only production would be exercised.
+ */
+const cleanUrls = (dir) => (req, _res, next) => {
+  const [path, query] = req.url.split('?');
+  if (path !== '/' && !extname(path)) {
+    const file = join(dir, decodeURIComponent(path) + '.html');
+    if (existsSync(file)) req.url = path + '.html' + (query ? '?' + query : '');
+  }
+  next();
+};
+const cleanUrlsPlugin = {
+  name: 'rivo-clean-urls',
+  configureServer(server) { server.middlewares.use(cleanUrls(page('.'))); },
+  configurePreviewServer(server) { server.middlewares.use(cleanUrls(page('dist'))); },
+};
 
 /**
  * Vite 8 builds with Rolldown. Chunking is configured through
@@ -17,6 +38,7 @@ const page = (name) => fileURLToPath(new URL(name, import.meta.url));
  */
 export default defineConfig({
   base: '/',
+  plugins: [cleanUrlsPlugin],
   build: {
     target: 'es2022',
     sourcemap: false,
