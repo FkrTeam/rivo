@@ -220,7 +220,7 @@
   font-weight: 900; font-size: clamp(4rem, 9vw, 9.5rem); letter-spacing: -0.05em; line-height: 0.9;
   color: var(--white); max-width: none;
 }
-.name__mark i { display: block; width: 0.55em; height: 1px; background: var(--white); margin: 0 0.1em; }
+.name__mark i { display: block; width: 0.55em; height: 3px; background: var(--white); margin: 0 0.1em; }
 .name h3 { margin-bottom: 14px; }
 
 /* ---------- capabilities : sequence schedule ---------- */
