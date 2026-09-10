@@ -100,25 +100,6 @@ export const projects = [
     ],
   },
   {
-    slug: '260-washington-belleville',
-    title: '260 Washington',
-    location: 'Belleville, NJ',
-    sector: 'Residential',
-    scope: 'Kitchens, wardrobes, vanities',
-    summary:
-      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
-    featured: false,
-    cover: '260-washington-belleville-03',
-    focus: '50% 40%',
-    gallery: [
-      { name: '260-washington-belleville-03', alt: 'Street elevation' },
-      { name: '260-washington-belleville-05', alt: 'Unit kitchen and living room in pale oak' },
-      { name: '260-washington-belleville-02', alt: 'Open wardrobe system with lighting' },
-      { name: '260-washington-belleville-01', alt: 'Bathroom with a floating oak vanity' },
-      { name: '260-washington-belleville-04', alt: 'Building elevation, rear' },
-    ],
-  },
-  {
     slug: 'hudson-cliff',
     title: 'Hudson Cliff',
     location: 'Fort Lee, NJ',
@@ -138,6 +119,25 @@ export const projects = [
       { name: 'hudson-cliff-03', alt: 'Wardrobe and entry console' },
       { name: 'hudson-cliff-08', alt: 'Elevator hall in oak and stone' },
       { name: 'hudson-cliff-04', alt: 'Building exterior at dusk' },
+    ],
+  },
+  {
+    slug: '260-washington-belleville',
+    title: '260 Washington',
+    location: 'Belleville, NJ',
+    sector: 'Residential',
+    scope: 'Kitchens, wardrobes, vanities',
+    summary:
+      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
+    featured: false,
+    cover: '260-washington-belleville-03',
+    focus: '50% 40%',
+    gallery: [
+      { name: '260-washington-belleville-03', alt: 'Street elevation' },
+      { name: '260-washington-belleville-05', alt: 'Unit kitchen and living room in pale oak' },
+      { name: '260-washington-belleville-02', alt: 'Open wardrobe system with lighting' },
+      { name: '260-washington-belleville-01', alt: 'Bathroom with a floating oak vanity' },
+      { name: '260-washington-belleville-04', alt: 'Building elevation, rear' },
     ],
   },
   {
