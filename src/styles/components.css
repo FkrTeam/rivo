@@ -327,7 +327,7 @@
   row-gap: clamp(40px, 5vw, 72px);
   margin-top: clamp(64px, 8vw, 120px);
 }
-.plate { grid-column: 2 / 12; }
+.plate { grid-column: 2 / 12; justify-self: center; width: 100%; max-width: 1280px; }
 .plate__figure {
   position: relative; margin: 0; aspect-ratio: var(--plate-ratio);
   background: var(--ink-2); border: 1px solid var(--hair); overflow: hidden;

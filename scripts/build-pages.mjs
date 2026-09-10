@@ -161,7 +161,7 @@ projects.forEach((p, i) => {
       if (!e) return '';
       return `<li class="plate">
             <figure class="plate__figure">
-              <img src="${e.src}" srcset="${e.srcset}" sizes="(max-width: 720px) 100vw, 80vw" width="${e.width}" height="${e.height}" loading="${k === 0 ? 'eager' : 'lazy'}" decoding="async" ${k === 0 ? 'fetchpriority="high"' : ''} alt="${esc(g.alt)}">
+              <img src="${e.src}" srcset="${e.srcset}" sizes="(max-width: 720px) 100vw, min(80vw, 1280px)" width="${e.width}" height="${e.height}" loading="${k === 0 ? 'eager' : 'lazy'}" decoding="async" ${k === 0 ? 'fetchpriority="high"' : ''} alt="${esc(g.alt)}">
               <figcaption class="spec"><b class="num">${pad(k + 1)}</b> / ${esc(g.alt)}</figcaption>
             </figure>
           </li>`;
