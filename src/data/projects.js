@@ -149,7 +149,7 @@ export const projects = [
     summary:
       'Townhouse kitchens and baths in Dallas. Black high-gloss fronts with a black stone island and brass fittings, and oak vanities with integrated lighting in the bathrooms.',
     featured: false,
-    cover: 'dallas-townhomes-01',
+    cover: 'dallas-townhomes-05',
     focus: '50% 50%',
     gallery: [
       { name: 'dallas-townhomes-05', alt: 'Townhouse exteriors' },
