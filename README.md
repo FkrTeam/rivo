@@ -39,7 +39,7 @@ from the copy to the cut, and the RIVO Red **dot** marks the point where it
 lands.
 
 Inside the cut the hero plays a **slider** of project frames (`src/data/hero.js`:
-260 Washington / Belleville, 301 Washington / Hoboken, 1404 Willow / Hoboken).
+260 Washington Ave / Belleville, 301 Washington St / Hoboken, 1404 Willow Ave / Hoboken).
 The frames occupy only the region right of the cut foot, so the photograph is
 spent on what is visible. A new frame is not faded in but cut in: a wipe
 parallel to the cut sweeps it across, then it settles from a slight enlargement

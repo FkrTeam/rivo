@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     slug: '1404-willow-hoboken',
-    title: '1404 Willow',
+    title: '1404 Willow Ave',
     location: 'Hoboken, NJ',
     sector: 'Residential',
     scope: 'Lobby, mail room, stair screen, amenity spaces',
@@ -62,7 +62,7 @@ export const projects = [
   },
   {
     slug: '301-washington-hoboken',
-    title: '301 Washington',
+    title: '301 Washington St',
     location: 'Hoboken, NJ',
     sector: 'Residential',
     scope: 'Unit kitchens',
@@ -123,12 +123,12 @@ export const projects = [
   },
   {
     slug: '260-washington-belleville',
-    title: '260 Washington',
+    title: '260 Washington Ave',
     location: 'Belleville, NJ',
     sector: 'Residential',
     scope: 'Kitchens, wardrobes, vanities',
     summary:
-      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
+      'Kitchens, wardrobes and bathroom vanities for the residential units at 260 Washington Ave, Belleville. Pale oak with flat fronts throughout, open wardrobe systems with integrated lighting, and a floating vanity under a mirrored cabinet.',
     featured: false,
     cover: '260-washington-belleville-03',
     focus: '50% 40%',
