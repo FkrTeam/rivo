@@ -20,3 +20,18 @@ export const details = {
 
 /** Section order on the page. Shared by navigation and the scroll choreography. */
 export const sections = ['hero', 'about', 'capabilities', 'sectors', 'work', 'detail', 'process', 'contact'];
+
+/**
+ * The social accounts, in the order they sit in the footer.
+ *
+ * One source for every page: `npm run pages` renders them into the generated
+ * project pages and patches the same list into index.html, so the addresses are
+ * changed here and nowhere else. `icon` is a sprite symbol id defined in
+ * index.html; an entry with an empty `href` renders as a dead mark, the way all
+ * three did before the accounts were published.
+ */
+export const social = [
+  { name: 'Instagram', icon: 'ic-instagram', href: 'https://www.instagram.com/rivomade' },
+  { name: 'X', icon: 'ic-x', href: 'https://x.com/rivomade' },
+  { name: 'LinkedIn', icon: 'ic-linkedin', href: 'https://www.linkedin.com/company/rivo-made/' },
+];

@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { projects, projectUrl } from '../src/data/projects.js';
+import { social } from '../src/data/content.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
@@ -33,6 +34,16 @@ function img(name) {
     src: `${IMG}/${name}-${largest}.webp`,
     srcset: e.widths.map((w) => `${IMG}/${name}-${w}.webp ${w}w`).join(', '),
   };
+}
+
+/* ---------- social: one list, rendered into every page (src/data/content.js) ---------- */
+function socialList() {
+  const items = social.map((s) => {
+    const href = s.href ? ` href="${esc(s.href)}" target="_blank" rel="noopener"` : ''; // no href: the mark is drawn but dead
+    return `            <li><a class="social__link"${href} aria-label="RIVO on ${esc(s.name)}"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#${esc(s.icon)}"/></svg></a></li>`;
+  });
+  return ['          <!-- social: the accounts live in src/data/content.js; run npm run pages after changing them -->',
+    '          <ul class="social">', ...items, '          </ul>'].join('\n');
 }
 
 /* ---------- shared chrome (mirrors index.html) ---------- */
@@ -94,12 +105,7 @@ const foot = `  </main>
         </a>
         <p class="footer__line">rhythm, built.</p>
         <div class="footer__side">
-          <!-- social: the links are not published yet; add href="..." to each <a> to switch them on -->
-          <ul class="social">
-            <li><a class="social__link" aria-label="RIVO on Instagram"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-instagram"/></svg></a></li>
-            <li><a class="social__link" aria-label="RIVO on X"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-x"/></svg></a></li>
-            <li><a class="social__link" aria-label="RIVO on LinkedIn"><svg class="social__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-linkedin"/></svg></a></li>
-          </ul>
+${socialList()}
           <a class="footer__top" href="#main">Back to top</a>
         </div>
       </div>
@@ -209,7 +215,10 @@ const cards = `<!-- projects:start (featured cards are written here by scripts/b
           ${featured.map(card).join('\n          ')}
         </ul>
         <!-- projects:end -->`;
-const marked = indexHtml.replace(/<!-- projects:start[\s\S]*?<!-- projects:end -->/, cards);
+/* the same social list the generated pages get, so the accounts have one source */
+const marked = indexHtml
+  .replace(/<!-- projects:start[\s\S]*?<!-- projects:end -->/, cards)
+  .replace(/[ \t]*<!-- social:[\s\S]*?<\/ul>/, socialList());
 if (marked !== indexHtml) writeFileSync(indexPath, marked);
 
 console.log(`projects.html + ${projects.length} project pages -> ${resolve(root, 'projects')}; ${featured.length} cards -> index.html`);
