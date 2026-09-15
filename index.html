@@ -245,6 +245,67 @@
             <div class="defs__row"><span class="spec">Phone</span><span><a class="link" href="tel:+12024075416">(202) 407 54 16</a></span></div>
             <div class="defs__row"><span class="spec">Locations</span><span>Miami / New York / Istanbul</span></div>
           </div>
+
+          <!-- The brief. Posts to /api/contact.php (PHP + MySQL on the host); without
+               JavaScript the same POST is a plain form submit and the endpoint redirects back. -->
+          <form class="brief" method="post" action="/api/contact.php" data-contact-form novalidate>
+            <p class="spec brief__title">Project brief</p>
+
+            <div class="brief__row">
+              <p class="field">
+                <label class="spec" for="f-name">Name<b aria-hidden="true">*</b></label>
+                <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name">
+                <span class="field__note" data-error-for="name"></span>
+              </p>
+              <p class="field">
+                <label class="spec" for="f-email">Email<b aria-hidden="true">*</b></label>
+                <input id="f-email" name="email" type="email" required maxlength="190" autocomplete="email" inputmode="email">
+                <span class="field__note" data-error-for="email"></span>
+              </p>
+            </div>
+
+            <div class="brief__row">
+              <p class="field">
+                <label class="spec" for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" maxlength="60" autocomplete="tel">
+                <span class="field__note" data-error-for="phone"></span>
+              </p>
+              <p class="field">
+                <label class="spec" for="f-company">Company</label>
+                <input id="f-company" name="company" type="text" maxlength="160" autocomplete="organization">
+              </p>
+            </div>
+
+            <p class="field">
+              <label class="spec" for="f-type">Project type</label>
+              <select id="f-type" name="project_type">
+                <option value="">Select</option>
+                <option>Hospitality</option>
+                <option>Residential</option>
+                <option>Retail</option>
+                <option>Commercial</option>
+                <option>Other</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <label class="spec" for="f-message">Message<b aria-hidden="true">*</b></label>
+              <textarea id="f-message" name="message" rows="5" required maxlength="6000"></textarea>
+              <span class="field__note" data-error-for="message"></span>
+            </p>
+
+            <!-- trap: a person never sees this, a bot fills it in -->
+            <div class="brief__trap" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="t" value="" data-stamp>
+
+            <div class="brief__foot">
+              <button class="btn" type="submit">Send the brief</button>
+              <p class="brief__status" role="status" aria-live="polite" data-status></p>
+            </div>
+          </form>
         </div>
       </div>
     </section>

@@ -3,3 +3,6 @@ dist/
 .DS_Store
 Thumbs.db
 .claude.json
+public/api/config.php
+rivo-logs/
+rivo-config.php

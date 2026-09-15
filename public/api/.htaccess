@@ -1,0 +1,35 @@
+# RIVO - api/: only contact.php is reachable.
+#
+# config.php holds the database and SMTP credentials. Apache would normally
+# execute it (and serve nothing), but a server with PHP disabled would hand out
+# the source, so it is denied here as well - together with the library files,
+# the SQL schema and anything a stray editor leaves behind.
+
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(php|sql|log|ini|json|md|bak|example|swp|save)$">
+    Require all denied
+  </FilesMatch>
+  <Files "contact.php">
+    Require all granted
+  </Files>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(php|sql|log|ini|json|md|bak|example|swp|save)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+  <Files "contact.php">
+    Order allow,deny
+    Allow from all
+  </Files>
+</IfModule>
+
+# No directory listing, no indexes.
+Options -Indexes
+
+# The endpoint answers POST; nothing here is cacheable.
+<IfModule mod_headers.c>
+  Header always set Cache-Control "no-store"
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>

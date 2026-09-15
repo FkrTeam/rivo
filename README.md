@@ -70,13 +70,15 @@ projects.html, projects/   generated project list + detail pages (npm run pages)
 src/main.js                shell: styles, nav, project rendering, the datum, the hero slider
 src/page.js                shell for the generated pages (styles, nav, year)
 src/styles/                base (tokens, font, V-cut background, frame) · typography · layout · components
-src/ui/                    navigation, projects (title-block sheets), interactions, datum (leader + dot on the cut), slider (hero frames)
+src/ui/                    navigation, projects (title-block sheets), interactions, datum (leader + dot on the cut), slider (hero frames), contact (the brief)
 src/data/                  assets.js (registry), images.js (manifest lookup), hero.js (slider frames), projects.js (all projects), content.js, images.manifest.json
 src/blocks/                WebGL block composition engine, used by studio.html only
 src/studio/                the light-theme demo page (studio.html, main.js, styles.css)
 src/webgl/, src/animation/ the retired panel-wall experience (kept for reference, not imported)
 scripts/                   build-pages.mjs · build-panel-glb.mjs · optimize-images.mjs · frame-check.mjs (panel wall only)
 public/assets/             brand/ (wordmark, Inter) · models/ · textures/ · images/
+public/api/                contact endpoint (PHP + MySQL), shipped as-is into dist/
+public/.htaccess           Apache: https, clean URLs, headers, caching
 ```
 
 ## V-cut tokens
@@ -110,6 +112,58 @@ the cut crosses the datum height and pins the dot there; it re-runs on resize.
 
 **Hero frames** — `src/data/hero.js`. Same pipeline; frames are picked by their NotebookLM names: `npm run index:notebook` copies the notebook's photographs into `assets-src/images/<slug>-NN` with the notebook's own numbers (it numbers each folder's photographs in ASCII order, from the `website/` subfolder where there is one), so 1404-WILLOW-HOBOKEN-6 is `1404-willow-hoboken-06`; `focus` is the `object-position` used for the cover crop, `HERO_INTERVAL` / `HERO_WIPE` set the timing. In DEV, `window.__rivo.slider.stop()` / `.show(i)` hold or pick a frame for review.
 
+**Social accounts** — `src/data/content.js`, the `social` array. `npm run pages` renders the list into the generated pages and patches the same markup into index.html, so the addresses are edited in one place. An entry with an empty `href` draws the mark but leaves it dead, which is how all three sat before the accounts were published.
+
 **KTX2 finish textures** — produce with KTX-Software (`ktx create … --encode uastc`) into `public/assets/textures/`, register in `ASSETS.textures` with `group: 'materials'`.
 
 **GLB** — `panel.glb` is generated. If a Draco or Meshopt compressed model is introduced, register the decoder in `AssetManager.js`.
+
+## The contact brief (form, mail, database)
+
+The contact section carries a project brief. Without JavaScript the browser
+posts the form and the endpoint redirects back to `/?contact=sent#contact`;
+with JavaScript the same payload goes over `fetch` as JSON (`src/ui/contact.js`)
+and the answer is written into the status line.
+
+```
+public/.htaccess           Apache: https, clean URLs, security headers, caching
+public/api/contact.php     the endpoint: validate -> store -> mail
+public/api/lib/db.php      PDO/MySQL, prepared statements, table created on first use
+public/api/lib/mailer.php  authenticated SMTP (465 SSL / 587 STARTTLS), mail() fallback
+public/api/config.example.php   copy to config.php on the server and fill in
+public/api/schema.sql      the same table, for phpMyAdmin
+```
+
+The submission is written to MySQL first and mailed second, so an SMTP hiccup
+never loses a message: the row stays with `mail_status` = `failed` and the
+reason goes to the log. The visitor sees a plain sentence; database and SMTP
+detail never leaves the server.
+
+What guards the endpoint: POST only, over https, from a configured origin; a
+honeypot field and a "filled in under 3 seconds / page open over 12 hours"
+trap; a per-address rate limit counted in the database; length caps and strict
+validation on every field; prepared statements for storage and CR/LF-stripped
+headers for mail (no header injection). `Reply-To` carries the visitor, `From`
+stays on the site's own domain so SPF/DKIM pass.
+
+### Deploying to shared Linux hosting
+
+1. `npm run build`, then upload **the contents of `dist/`** into `public_html/`
+   (`.htaccess` included - enable hidden files in the file manager).
+2. hPanel -> Databases -> MySQL: create a database and a user. The table is
+   created on the first submission; `api/schema.sql` is there for a manual import.
+3. hPanel -> Emails: create the `hello@rivomade.com` mailbox and note its SMTP
+   password. It is both the sender and the recipient; the visitor's address
+   rides along as `Reply-To`.
+4. On the server, copy `public_html/api/config.example.php` to
+   `~/rivo-config.php` - one level **above** `public_html`, where no request can
+   reach it even if PHP ever stops running - fill in the database and SMTP
+   values and the site's own origins, then `chmod 600` it. `api/config.php`
+   works as well (denied by `api/.htaccess`); the endpoint takes whichever it
+   finds first, outside before inside. Neither is in the repository.
+5. hPanel -> SSL: issue the certificate. `.htaccess` then redirects every
+   http request to https and sends HSTS for a year.
+6. Send a test brief. Errors land in `rivo-logs/contact.log` one level **above**
+   `public_html` (the path is the `log` key in config.php).
+
+PHP 8.1+ with `pdo_mysql` and `openssl`; `mbstring` is used when present.

@@ -1,0 +1,99 @@
+# RIVO - Apache configuration for shared Linux hosting.
+#
+# Upload the contents of dist/ into public_html/ ; this file rides along.
+#   1. every request is forced onto https
+#   2. clean URLs: /projects -> projects.html, /projects/fiat-house -> projects/fiat-house.html
+#      (the same paths the site links to), and .html is redirected away
+#   3. security headers, compression and long-lived caching for hashed assets
+
+Options -Indexes
+DirectoryIndex index.html
+# no automatic /projects -> /projects/ redirect; the rewrite above serves the page
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ---- 1. https, once, for every host -------------------------------------
+  # HTTPS=on is the direct case; X-Forwarded-Proto covers a proxy or CDN in front.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+  RewriteCond %{HTTP:X-Forwarded-Ssl} !^on$ [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # ---- 2. clean URLs -------------------------------------------------------
+  # /index.html -> / , and /page.html -> /page : one address per page
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^ / [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # /page -> page.html when that file exists.
+  # The -d test is deliberately absent: /projects is both a page (projects.html)
+  # and a real directory (projects/fiat-house.html), and the page must win.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
+</IfModule>
+
+# ---- 3. headers ------------------------------------------------------------
+<IfModule mod_headers.c>
+  # A year of HSTS. Add preload only once the site has run on https for a while.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+  # The site is self-contained: its own scripts, styles, fonts and images only.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header unset X-Powered-By
+  Header always unset X-Powered-By
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  # assets/ filenames carry a content hash, so they can be cached hard
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType model/gltf-binary "access plus 1 year"
+  # HTML always revalidates, otherwise a deploy would not reach a returning visitor
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|woff2|webp|svg|glb|ktx2|wasm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType model/gltf-binary .glb
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
+# Nothing here should ever be fetched over http(s).
+<FilesMatch "^\.(htaccess|htpasswd|env|git)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
